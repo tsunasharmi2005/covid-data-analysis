@@ -1,0 +1,34 @@
+COVID-19 Data Analysis - Project Notes
+
+Dataset: ("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
+ / covid_analysis.py)
+Countries used: Brazil, India, United States
+
+Columns used:
+- location      : country name
+- date          : date of record
+- total_cases   : cumulative cases
+- total_deaths  : cumulative deaths
+
+Columns I created:
+- new_cases     : daily new cases (diff of total_cases)
+- month         : month from date (for heatmap)
+- death_rate    : total_deaths / total_cases * 100
+
+Cleaning steps:
+- Selected 4 columns only
+- Filtered 3 countries
+- Converted date to datetime
+- Removed missing values (8 rows in total_cases and total_deaths)
+- Final shape: (5022, 4)
+
+Tools: Python, Pandas, NumPy, Matplotlib, Seaborn
+
+Charts:
+1. Total cases growth (line)
+2. Monthly new cases (heatmap)
+3. India 30-day prediction (simple trend line)
+4. Total deaths (line)
+5. Death rate by country (bar)
+
+Output files: covid_cases.png, covid_heatmap.png, covid_prediction.png, covid_deaths.png, covid_death_rate.png
